@@ -75,7 +75,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
           script: |
             # Выполняет pull образа с DockerHub
-            sudo docker pull ${{ secrets.USER }}/${{ secrets.DOCKER_USERNAME }}
+            sudo docker pull strayd0g/infra_project
             #остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 ${{ secrets.USER }}/${{ secrets.DOCKER_USERNAME }}
+            sudo docker run --rm -d -p 5000:5000 strayd0g/infra_project
